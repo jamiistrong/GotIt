@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="demo.css">
+		
+
+		
+		<meta  name="viewport" content="width-device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		
+		
+		<title> Demo</title>
+		<script>
+				    function s(v) { document.getElementById('res').value = v }
+				    function a(v) { document.getElementById('res').value += v }
+				    function e() { try { s(eval(document.getElementById('res').value)) } catch(e) { s('Error') } }
+			  </script>
+
+			  <script type ="text/javascript">
+  $(document).ready(function(){
+  	$("#speechapi").bind('webkitspeechchange', function(e) {
+  		var val = $(this).val();
+
+  		if (val == "hello"){
+  			alert("hello world!");
+  			$('#responseText').val("Hello to you!");
+  		}
+  		if (val == "bye"){
+  			alert("goodbye world!");
+  			$('#responseText').val("Goodbye to you!");
+		}
+  		if (val == "zoe"){
+  			alert("hello zoe!");
+  			$('#enterItem').val("Hello to you, Zoe!");
+  		}
+  		};
+  	});
+  });
+  </script>
+	</head>
+<!--Toggle Side Menu widget-->	
+	<body class="menu menu-open">
+<!--ShoppingList Widget-->	
+		<section class="tasks">
+		    <header class="tasks-header">
+		    	<br>
+		      	<h2 class="tasks-title">Got It! Shopping</h2>
+				
+		      	<!--<a href="index.html" id="question" class="tasks-lists customDialog"></a>--><br>
+		      	<input type="text" id="enterItem" value="Enter an item here" x-webkit-speech/>
+		    </header>
+		   <!-- <IMG id="empty" SRC="empty.gif">-->
+    		<div id="quickAdd">
+    			<header>
+    				
+    				<div id=q1></div>
+    				<div id=q2></div>
+    				<div id=q3></div>
+    				<div id=q4></div>
+    			</header>
+    		</div>
+    	</section>
+
+		<!--<div class="xtra"></div>-->
+		<header>
+			<!--<a href="#" class="menu-toggle">Show/Hide Shopping Cart</a>-->
+			<div class="menu-side">
+<!--Checkout item menu here-->
+				  <div class="cart">
+				    <div class="cart-top">
+				      <h2 class="cart-top-title">CHECKOUT</h2>
+				      <a href="#alertShare" id="share"></a>
+				      <div class="cart-top-info">No items</div>
+				    </div>
+
+				    <ul class="checkoutNow">
+				      
+				    </ul>
+
+				    
+				    
+		 		</div>
+		 		<div id="cart-bottom"  >$0.00</div>
+				      
+				      
+
+
+  			<div id="options">
+				<!--CALC  SHARE AND TRASH LINKS-->
+	  			<a href="#openModal" id="calc"></a>
+	  			
+		  		<div id="dumpList" title="Clear Checkout Cart"></div><br>
+		  		<a href="#" class="cart-button">Total</a>		
+			  </div>
+
+
+			</div><!--MENU SIDE DIV ENDS-->
+
+		</header>
+
+	
+
+  <!--Calculator-->
+  <!--
+  				
+-->
+
+<!--Accumilation Fill Bar-->
+<!--
+	<section class="container">
+	    <div class="progress">
+	      <span style="width: 20%;"><span>Other</span></span>
+	    </div>
+
+	    <div class="progress">
+	      <span class="green" style="width: 40%;"><span>Paper Goods</span></span>
+	    </div>
+
+	    <div class="progress">
+	      <span class="orange" style="width: 60%;"><span>Food</span></span>
+	    </div>
+
+	    <div class="progress">
+	      <span class="red" style="width: 80%;"><span>Houseware</span></span>
+	    </div>
+
+	    <div class="progress">
+	      <span class="blue" style="width: 100%;"><span>Electronics</span></span>
+	    </div>
+-->	    
+ 
+		
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/blitzer/jquery-ui.css" type="text/css" />
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+	<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<script src="maskmoney.js"></script>
+	<script src="jquery.easy-confirm-dialog.js"></script>
+	<script src="jquery.number.js"></script>
+	<script src="jquery.number.min.js"></script>
+	<script src="demo.js"></script>
+	<!--Share alert-->
+	<div id="alertShare" class="modalDialog">
+		<div>
+			<a href="#close" title="Close" class="close">X</a>
+			<p>Share functionality coming soon!</p>
+		</div>	
+
+	</div>
+	<!--calc modal-->
+ 			<div id="openModal" class="modalDialog">
+ 				<div>
+
+	 				<a href="#close" title="Close" class="close">X</a>
+	 				<form class="calc" >
+					    <p class="calc-display">
+					      <input type="text" name="res" id="res" value="" class="calc-display-input" onfocus="this.blur()">
+					    </p>
+					    
+					    <p class="calc-row">
+					      <button type="button" class="calc-button" onclick="a('7')">7</button>
+					      <button type="button" class="calc-button" onclick="a('8')">8</button>
+					      <button type="button" class="calc-button" onclick="a('9')">9</button>
+					      <button type="button" class="calc-button calc-button-red calc-button-big" onclick="a('*')">x</button>
+					    </p>
+					    <p class="calc-row">
+					      <button type="button" class="calc-button" onclick="a('4')">4</button>
+					      <button type="button" class="calc-button" onclick="a('5')">5</button>
+					      <button type="button" class="calc-button" onclick="a('6')">6</button>
+					      <button type="button" class="calc-button calc-button-red calc-button-big" onclick="a('-')">-</button>
+					    </p>
+					    <p class="calc-row">
+					      <button type="button" class="calc-button" onclick="a('1')">1</button>
+					      <button type="button" class="calc-button" onclick="a('2')">2</button>
+					      <button type="button" class="calc-button" onclick="a('3')">3</button>
+					      <button type="button" class="calc-button calc-button-red calc-button-big" onclick="a('+')">+</button>
+					    </p>
+					    <p class="calc-row">
+					      <button type="button" class="calc-button" onclick="a('0')">0</button>
+					      <button type="button" class="calc-button" onclick="a('.')">.</button>
+					      <button type="button" class="calc-button" onclick="s('')">C</button>
+					      <button type="button" class="calc-button calc-button-yellow calc-button-big"  onclick="e()">Total</button>
+					    </p>
+  					</form>
+	 			</div>	
+ 			</div>				
+		
+
+	</body>
+</html>
